@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vandersteen — Handy, useful apps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy:#0A1628;
+  --navy-deep:#060E1A;
+  --paper:#F5F7FA;
+  --white:#ffffff;
+  --gold:#D9BD63;
+  --gold-light:#EAD9A0;
+  --blue:#1F5C99;
+  --dim:#6B7280;
+  --border:#E5E7EB;
+}
+body { font-family:'Inter',sans-serif; background:var(--white); color:var(--navy); line-height:1.6; }
+
+/* NAV */
+nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(10,22,40,0.92); backdrop-filter:blur(8px); display:flex; align-items:center; justify-content:space-between; padding:1rem 3rem; border-bottom:1px solid rgba(217,189,99,0.15); }
+.nav-logo { font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:var(--gold); text-decoration:none; letter-spacing:-0.3px; }
+.nav-links { display:flex; gap:2rem; align-items:center; }
+.nav-links a { font-size:14px; color:rgba(255,255,255,0.65); text-decoration:none; }
+.nav-links a:hover { color:#fff; }
+.nav-cta { background:var(--gold); color:var(--navy); padding:8px 18px; border-radius:6px; font-size:13px; font-weight:700; text-decoration:none; }
+.nav-cta:hover { background:var(--gold-light); }
+
+/* HERO */
+.hero { background:var(--navy); min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:9rem 2rem 5rem; position:relative; overflow:hidden; }
+.hero::before { content:''; position:absolute; inset:0; opacity:0.05; background-image:linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px); background-size:64px 64px; pointer-events:none; }
+.hero-eyebrow { position:relative; display:inline-block; background:rgba(217,189,99,0.12); border:1px solid rgba(217,189,99,0.3); color:var(--gold); padding:6px 18px; border-radius:20px; font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:2rem; }
+.hero h1 { position:relative; font-family:'Playfair Display',serif; font-size:clamp(2.1rem,5.5vw,3.6rem); font-weight:900; line-height:1.15; color:#fff; max-width:780px; margin-bottom:1.5rem; letter-spacing:-0.5px; }
+.hero h1 em { font-style:italic; color:var(--gold); }
+.hero-sub { position:relative; font-size:clamp(15px,2.2vw,17px); color:rgba(255,255,255,0.65); max-width:600px; margin-bottom:0.75rem; font-weight:300; line-height:1.7; }
+.hero-sub strong { color:rgba(255,255,255,0.9); font-weight:600; }
+
+/* TIMELINE STRIP */
+.timeline { position:relative; display:flex; align-items:center; gap:0; margin-top:3rem; width:100%; max-width:640px; }
+.timeline-line { position:absolute; top:6px; left:0; right:0; height:1px; background:rgba(217,189,99,0.25); }
+.tl-point { flex:1; position:relative; text-align:center; }
+.tl-dot { width:11px; height:11px; border-radius:50%; background:var(--navy); border:2px solid var(--gold); margin:0 auto 10px; position:relative; z-index:2; }
+.tl-year { font-family:'Playfair Display',serif; font-size:14px; font-weight:700; color:var(--gold); margin-bottom:3px; }
+.tl-label { font-size:11px; color:rgba(255,255,255,0.45); max-width:110px; margin:0 auto; line-height:1.4; }
+
+/* SECTION SHARED */
+.section-eyebrow { font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--blue); margin-bottom:0.9rem; }
+.section-inner { max-width:900px; margin:0 auto; padding:6rem 2rem; }
+h2.section-title { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700; color:var(--navy); margin-bottom:1.25rem; letter-spacing:-0.5px; max-width:620px; }
+.section-lead { font-size:15.5px; color:var(--dim); max-width:580px; margin-bottom:3rem; line-height:1.7; }
+
+/* OVER MIJ */
+.about { background:var(--paper); }
+.about-body { font-size:15.5px; color:#374151; max-width:640px; line-height:1.85; margin-bottom:3rem; }
+
+/* PROJECTEN */
+.projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.75rem; }
+.project-card { border:1px solid var(--border); border-radius:14px; padding:2rem; background:#fff; transition:border-color 0.2s; }
+.project-card:hover { border-color:var(--gold); }
+.project-icon { font-size:30px; margin-bottom:1rem; }
+.project-title { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--navy); margin-bottom:0.6rem; }
+.project-tag { display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--blue); background:rgba(31,92,153,0.08); padding:3px 10px; border-radius:12px; margin-bottom:0.9rem; }
+.project-body { font-size:14px; color:var(--dim); line-height:1.7; margin-bottom:1.5rem; }
+.project-link { display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:700; color:var(--navy); text-decoration:none; border-bottom:2px solid var(--gold); padding-bottom:2px; }
+.project-link:hover { color:var(--blue); }
+
+/* CTA */
+.cta-section { background:var(--navy); padding:6rem 2rem; text-align:center; }
+.cta-section h2 { font-family:'Playfair Display',serif; font-size:clamp(1.9rem,4.5vw,2.6rem); font-weight:700; color:#fff; margin-bottom:1rem; max-width:520px; margin-left:auto; margin-right:auto; letter-spacing:-0.5px; }
+.cta-section p { font-size:15px; color:rgba(255,255,255,0.55); max-width:420px; margin:0 auto 2rem; }
+.cta-btn { display:inline-block; background:var(--gold); color:var(--navy); font-size:15px; font-weight:800; padding:15px 40px; border-radius:8px; text-decoration:none; }
+.cta-btn:hover { background:var(--gold-light); }
+
+/* FOOTER */
+footer { background:var(--navy-deep); padding:2.25rem 2rem; }
+.footer-inner { max-width:900px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+.footer-logo { font-family:'Playfair Display',serif; color:var(--gold); font-weight:700; font-size:16px; }
+.footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
+.footer-links a { color:rgba(255,255,255,0.4); text-decoration:none; font-size:13px; }
+.footer-links a:hover { color:rgba(255,255,255,0.7); }
+.footer-copy { color:rgba(255,255,255,0.25); font-size:12px; }
+
+@media (max-width:640px) {
+  nav { padding:0.85rem 1.25rem; }
+  .nav-links { gap:1rem; }
+  .nav-links a:not(.nav-cta) { display:none; }
+  .hero { padding:7.5rem 1.5rem 4rem; }
+  .timeline { flex-wrap:wrap; gap:1.5rem; margin-top:2.5rem; }
+  .timeline-line { display:none; }
+  .tl-point { flex:1 1 40%; }
+  .section-inner { padding:4rem 1.5rem; }
+  .footer-inner { flex-direction:column; text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Vandersteen</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="mailto:info@vandersteen.be" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">50+ years in IT</p>
+  <h1>A lifetime of IT,<br>turned into <em>useful apps</em>.</h1>
+  <p class="hero-sub">Not a developer by trade, but someone who spent years <strong>leading teams of developers</strong> — from startup to mid-sized company.</p>
+  <p class="hero-sub">Today I put that experience into practice myself, with <strong>Claude AI</strong> as my development partner.</p>
+
+  <div class="timeline">
+    <div class="timeline-line"></div>
+    <div class="tl-point"><div class="tl-dot"></div><div class="tl-year">1972</div><div class="tl-label">Career starts as an employee</div></div>
+    <div class="tl-point"><div class="tl-dot"></div><div class="tl-year">1982</div><div class="tl-label">Entrepreneur — from startup to mid-sized company</div></div>
+    <div class="tl-point"><div class="tl-dot"></div><div class="tl-year">2025</div><div class="tl-label">Building new apps with Claude AI</div></div>
+    <div class="tl-point"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-label">PickMyNumbers &amp; RacketComp go live</div></div>
+  </div>
+</div>
+
+<div class="about" id="about">
+  <div class="section-inner">
+    <p class="section-eyebrow">About me</p>
+    <h2 class="section-title">Over 50 years in IT — still building.</h2>
+    <p class="about-body">
+      My career in IT started in 1972, as an employee. A few years later I took the step into entrepreneurship and built companies — from startup to mid-sized business. I'm not a developer by trade, but I spent years leading teams of developers, which taught me exactly what a good application needs: not just technically sound, but genuinely useful and easy to use.
+      <br><br>
+      Today I put that experience into practice myself. With Claude AI as my development partner, I build handy, well-thought-out apps — without writing every line of code myself, but with the insight of half a century in IT to make the right choices.
+    </p>
+  </div>
+</div>
+
+<div id="projects">
+  <div class="section-inner">
+    <p class="section-eyebrow">Projects</p>
+    <h2 class="section-title">Two apps, built with AI as a partner.</h2>
+    <p class="section-lead">Practical applications, born from an idea and developed into working, live products.</p>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-icon">🎰</div>
+        <span class="project-tag">EuroMillions</span>
+        <div class="project-title">PickMyNumbers</div>
+        <p class="project-body">A EuroMillions number optimizer that plays tonight's specific draw machine and ball set — not 20 years of unfiltered history. Statistically grounded, free to use.</p>
+        <a href="https://pickmynumbers.eu" class="project-link" target="_blank" rel="noopener">Visit PickMyNumbers.eu →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🎾</div>
+        <span class="project-tag">Racket sports</span>
+        <div class="project-title">RacketComp</div>
+        <p class="project-body">The American Tournament platform for racket sport clubs: padel, tennis, badminton, squash and pickleball. Automated schedules, live standings and score management — all in one place.</p>
+        <a href="https://racketcomp.eu" class="project-link" target="_blank" rel="noopener">Visit RacketComp.eu →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Questions, or interested<br>in working together?</h2>
+  <p>Feel free to get in touch — I'd love to hear what you think of these projects.</p>
+  <a href="mailto:info@vandersteen.be" class="cta-btn">Send an email →</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Vandersteen</div>
+    <div class="footer-links">
+      <a href="https://pickmynumbers.eu" target="_blank" rel="noopener">PickMyNumbers</a>
+      <a href="https://racketcomp.eu" target="_blank" rel="noopener">RacketComp</a>
+      <a href="mailto:info@vandersteen.be">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026 Vandersteen.be</div>
+  </div>
+</footer>
+
+</body>
+</html>
