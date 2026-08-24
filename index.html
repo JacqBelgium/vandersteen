@@ -71,6 +71,16 @@ h2.section-title { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,
 .project-card.coming-soon .project-tag { background:rgba(107,114,128,0.1); color:var(--dim); }
 .coming-soon-label { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:700; color:var(--dim); }
 
+/* CONTACT */
+.contact { background:var(--paper); }
+.contact-grid { display:grid; grid-template-columns:1.1fr 0.9fr; gap:3rem; align-items:center; }
+.contact-text .about-body { margin-bottom:1.75rem; }
+.contact-email { display:inline-flex; align-items:center; gap:8px; font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:var(--navy); text-decoration:none; border-bottom:2px solid var(--gold); padding-bottom:3px; }
+.contact-email:hover { color:var(--blue); }
+.contact-photo-wrap { display:flex; justify-content:center; }
+.contact-photo { width:100%; max-width:320px; aspect-ratio:3/4; border-radius:16px; overflow:hidden; box-shadow:0 20px 40px -12px rgba(10,22,40,0.25); border:1px solid var(--border); }
+.contact-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+
 /* CTA */
 .cta-section { background:var(--navy); padding:6rem 2rem; text-align:center; }
 .cta-section h2 { font-family:'Playfair Display',serif; font-size:clamp(1.9rem,4.5vw,2.6rem); font-weight:700; color:#fff; margin-bottom:1rem; max-width:520px; margin-left:auto; margin-right:auto; letter-spacing:-0.5px; }
@@ -96,6 +106,8 @@ footer { background:var(--navy-deep); padding:2.25rem 2rem; }
   .timeline-line { display:none; }
   .tl-point { flex:1 1 40%; }
   .section-inner { padding:4rem 1.5rem; }
+  .contact-grid { grid-template-columns:1fr; gap:2rem; }
+  .contact-photo-wrap { order:-1; }
   .footer-inner { flex-direction:column; text-align:center; }
 }
 </style>
@@ -107,7 +119,7 @@ footer { background:var(--navy-deep); padding:2.25rem 2rem; }
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
-    <a href="mailto:info@vandersteen.be" class="nav-cta">Contact</a>
+    <a href="#contact" class="nav-cta">Contact</a>
   </div>
 </nav>
 
@@ -180,10 +192,32 @@ footer { background:var(--navy-deep); padding:2.25rem 2rem; }
   </div>
 </div>
 
+<div class="contact" id="contact">
+  <div class="section-inner">
+    <p class="section-eyebrow">Contact</p>
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-text">
+        <p class="about-body">
+          It doesn't matter whether I'm at home in Ghent or travelling abroad — the internet is our friend, so I'm always just an email away.
+          <br><br>
+          Send me a message and I'll get back to you.
+        </p>
+        <a href="mailto:jacq@vandersteen.be" class="contact-email">✉ jacq@vandersteen.be</a>
+      </div>
+      <div class="contact-photo-wrap">
+        <div class="contact-photo">
+          <img src="assets/contact.jpg" alt="Jacq Vandersteen enjoying life abroad">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="cta-section">
   <h2>Questions, or have<br>a great idea?</h2>
   <p>Feel free to get in touch — I'd love to hear about your idea and how we can develop it together using AI.</p>
-  <a href="mailto:info@vandersteen.be" class="cta-btn">Send an email →</a>
+  <a href="mailto:jacq@vandersteen.be" class="cta-btn">Send an email →</a>
 </div>
 
 <footer>
@@ -192,7 +226,7 @@ footer { background:var(--navy-deep); padding:2.25rem 2rem; }
     <div class="footer-links">
       <a href="https://pickmynumbers.eu" target="_blank" rel="noopener">PickMyNumbers</a>
       <a href="https://racketcomp.eu" target="_blank" rel="noopener">RacketComp</a>
-      <a href="mailto:info@vandersteen.be">Contact</a>
+      <a href="mailto:jacq@vandersteen.be">Contact</a>
     </div>
     <div class="footer-copy">© 2026 Vandersteen.be</div>
   </div>
