@@ -58,7 +58,7 @@ h2.section-title { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,
 .about-body { font-size:15.5px; color:#374151; max-width:640px; line-height:1.85; margin-bottom:3rem; }
 
 /* PROJECTEN */
-.projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.75rem; }
+.projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
 .project-card { border:1px solid var(--border); border-radius:14px; padding:2rem; background:#fff; transition:border-color 0.2s; }
 .project-card:hover { border-color:var(--gold); }
 .project-icon { font-size:30px; margin-bottom:1rem; }
@@ -67,6 +67,9 @@ h2.section-title { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,
 .project-body { font-size:14px; color:var(--dim); line-height:1.7; margin-bottom:1.5rem; }
 .project-link { display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:700; color:var(--navy); text-decoration:none; border-bottom:2px solid var(--gold); padding-bottom:2px; }
 .project-link:hover { color:var(--blue); }
+.project-card.coming-soon { opacity:0.85; }
+.project-card.coming-soon .project-tag { background:rgba(107,114,128,0.1); color:var(--dim); }
+.coming-soon-label { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:700; color:var(--dim); }
 
 /* CTA */
 .cta-section { background:var(--navy); padding:6rem 2rem; text-align:center; }
@@ -156,6 +159,22 @@ footer { background:var(--navy-deep); padding:2.25rem 2rem; }
         <div class="project-title">RacketComp</div>
         <p class="project-body">The American Tournament platform for racket sport clubs: padel, tennis, badminton, squash and pickleball. Automated schedules, live standings and score management — all in one place.</p>
         <a href="https://racketcomp.eu" class="project-link" target="_blank" rel="noopener">Visit RacketComp.eu →</a>
+      </div>
+
+      <div class="project-card coming-soon">
+        <div class="project-icon">🩺</div>
+        <span class="project-tag">Health</span>
+        <div class="project-title">Isometric Exercises</div>
+        <p class="project-body">Simple, guided isometric exercise routines designed to help support healthy blood pressure. Currently in development.</p>
+        <span class="coming-soon-label">🔜 Coming soon — StaticIso.eu</span>
+      </div>
+
+      <div class="project-card coming-soon">
+        <div class="project-icon">⛽</div>
+        <span class="project-tag">Belgium</span>
+        <div class="project-title">Mazout Price Trends</div>
+        <p class="project-body">Track heating oil ("mazout") prices and trends across Belgium, helping households find the best time to buy.</p>
+        <span class="coming-soon-label">🔜 Under construction — MazoutPriceTrends.eu</span>
       </div>
     </div>
   </div>
