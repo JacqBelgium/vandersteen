@@ -22,7 +22,9 @@
 body { font-family:'Inter',sans-serif; background:var(--white); color:var(--navy); line-height:1.6; }
 
 /* NAV */
-nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(10,22,40,0.92); backdrop-filter:blur(8px); display:flex; align-items:center; justify-content:space-between; padding:1rem 3rem; border-bottom:1px solid rgba(217,189,99,0.15); }
+nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(10,22,40,0.92); backdrop-filter:blur(8px); display:flex; flex-direction:column; align-items:flex-end; padding:1rem 3rem 0.6rem; border-bottom:1px solid rgba(217,189,99,0.15); }
+.nav-row { display:flex; align-items:center; justify-content:space-between; width:100%; }
+.nav-translate-hint { font-size:11px; color:rgba(255,255,255,0.35); margin-top:6px; }
 .nav-logo { font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:var(--gold); text-decoration:none; letter-spacing:-0.3px; }
 .nav-links { display:flex; gap:2rem; align-items:center; }
 .nav-links a { font-size:14px; color:rgba(255,255,255,0.65); text-decoration:none; }
@@ -31,7 +33,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(10,22
 .nav-cta:hover { background:var(--gold-light); }
 
 /* HERO */
-.hero { background:var(--navy); min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:9rem 2rem 5rem; position:relative; overflow:hidden; }
+.hero { background:var(--navy); min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:10rem 2rem 5rem; position:relative; overflow:hidden; }
 .hero::before { content:''; position:absolute; inset:0; opacity:0.05; background-image:linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px); background-size:64px 64px; pointer-events:none; }
 .hero-eyebrow { position:relative; display:inline-block; background:rgba(217,189,99,0.12); border:1px solid rgba(217,189,99,0.3); color:var(--gold); padding:6px 18px; border-radius:20px; font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:2rem; }
 .hero h1 { position:relative; font-family:'Playfair Display',serif; font-size:clamp(2.1rem,5.5vw,3.6rem); font-weight:900; line-height:1.15; color:#fff; max-width:780px; margin-bottom:1.5rem; letter-spacing:-0.5px; }
@@ -98,10 +100,11 @@ footer { background:var(--navy-deep); padding:2.25rem 2rem; }
 .footer-copy { color:rgba(255,255,255,0.25); font-size:12px; }
 
 @media (max-width:640px) {
-  nav { padding:0.85rem 1.25rem; }
+  nav { padding:0.85rem 1.25rem 0.55rem; }
   .nav-links { gap:1rem; }
   .nav-links a:not(.nav-cta) { display:none; }
-  .hero { padding:7.5rem 1.5rem 4rem; }
+  .nav-translate-hint { font-size:10px; }
+  .hero { padding:8.5rem 1.5rem 4rem; }
   .timeline { flex-wrap:wrap; gap:1.5rem; margin-top:2.5rem; }
   .timeline-line { display:none; }
   .tl-point { flex:1 1 40%; }
@@ -115,12 +118,15 @@ footer { background:var(--navy-deep); padding:2.25rem 2rem; }
 <body>
 
 <nav>
-  <a class="nav-logo" href="#">Vandersteen</a>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact" class="nav-cta">Contact</a>
+  <div class="nav-row">
+    <a class="nav-logo" href="#">Vandersteen</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
   </div>
+  <p class="nav-translate-hint">Use your browser's translate feature for other languages</p>
 </nav>
 
 <div class="hero">
@@ -176,7 +182,7 @@ footer { background:var(--navy-deep); padding:2.25rem 2rem; }
       <div class="project-card coming-soon">
         <div class="project-icon">🩺</div>
         <span class="project-tag">Health</span>
-        <div class="project-title">Isometric Exercises</div>
+        <div class="project-title">Blood Pressure</div>
         <p class="project-body">Simple, guided isometric exercise routines designed to help support healthy blood pressure. Currently in development.</p>
         <span class="coming-soon-label">🔜 Coming soon — StaticIso.eu</span>
       </div>
